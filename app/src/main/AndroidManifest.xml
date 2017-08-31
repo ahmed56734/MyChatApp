@@ -10,10 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".ChatActivity"
+            android:parentActivityName=".MainActivity"
+            >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
 
         </activity>
-        <activity android:name=".ChatActivity" />
         <activity android:name=".OnlineUsers" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -22,6 +29,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".widget.FriendsWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/friends_widget_info" />
+        </receiver>
+
+        <service android:name=".widget.UpdateWidgetService" />
+
+        <service
+            android:name=".widget.FriendsRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
     </application>
 
 </manifest>

@@ -2,9 +2,9 @@ package com.example.ahmed.mychatapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -12,12 +12,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.ahmed.mychatapp.widget.UpdateWidgetService;
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,11 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @BindView(R.id.viewpager)
-    ViewPager viewPager;
 
-    @BindView(R.id.tab_layout)
-    TabLayout tabLayout;
 
 
 
@@ -49,15 +43,24 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
-        tabLayout.setupWithViewPager(viewPager);
+
+
+
+
 
 
         mAuth = FirebaseAuth.getInstance();
 
+
+
+
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -72,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.sign_out_item:
 
                 setActive(mAuth.getCurrentUser().getUid(), false);
-                mAuth.signOut();
+                AuthUI.getInstance().signOut(this);
+                UpdateWidgetService.startActionUpdateFriendsWidget(this);
                 finish();
                 return true;
             default:
@@ -80,18 +84,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "Signed in!", Toast.LENGTH_SHORT).show();
-            } else if (resultCode == RESULT_CANCELED) {
-                finish();
-            }
-        }
-    }
 
 
 

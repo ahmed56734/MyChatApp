@@ -5,4 +5,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_your_friend_email">add your friend email</string>
     <string name="friend_image_icon">friend image icon</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="select_as_favorite_friend">select as favorite friend</string>
+    <string name="you_have_no_favorite_friends">you have no favorite friends</string>
+    <string name="friends_list">Friends List :</string>
+    <string name="you_have_no_friends_yet">you have no friends yet</string>
 </resources>

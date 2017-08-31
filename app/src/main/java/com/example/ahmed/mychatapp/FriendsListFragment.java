@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,21 +37,12 @@ public class FriendsListFragment extends Fragment {
     private DatabaseReference mCurrentUserFriends;
     @BindView(R.id.rv_friends_list)
     RecyclerView mFriendsListRecyclerView;
+    @BindView(R.id.empty_view) TextView mEmptyView;
     FriendsListAdapter mFriendsListAdapter;
 
     public FriendsListFragment() {
         // Required empty public constructor
     }
-
-//    public static FriendsListFragment newInstance(String currentUserUid) {
-//
-//        Bundle args = new Bundle();
-//        args.putString("uid", currentUserUid);
-//
-//        FriendsListFragment fragment = new FriendsListFragment();
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,6 +71,7 @@ public class FriendsListFragment extends Fragment {
         mFriendsListRecyclerView.setLayoutManager(linearLayoutManager);
 
         mFriendsListRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), linearLayoutManager.getOrientation()));
+
 
         return view;
     }
@@ -111,6 +104,8 @@ public class FriendsListFragment extends Fragment {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         User friend = dataSnapshot.getValue(User.class);
                         mFriendsListAdapter.addFriend(friend);
+                        mEmptyView.setVisibility(View.GONE);
+                        mFriendsListRecyclerView.setVisibility(View.VISIBLE);
 
                     }
 

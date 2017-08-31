@@ -13,6 +13,7 @@ public class User implements Parcelable {
     private String name;
     private String email;
     private String photoUrl;
+    private Boolean online;
 
     public User(){};
 
@@ -56,6 +57,14 @@ public class User implements Parcelable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean getOnline() {
+        return online;
+    }
+
+    public void setOnline(Boolean online) {
+        this.online = online;
     }
 
     public void setPhotoUrl(String photoUrl) {

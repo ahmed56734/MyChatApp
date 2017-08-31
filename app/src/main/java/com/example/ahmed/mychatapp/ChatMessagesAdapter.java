@@ -90,4 +90,5 @@ public class ChatMessagesAdapter extends FirebaseRecyclerAdapter<Message, ChatMe
             }
         }
     }
+
 }

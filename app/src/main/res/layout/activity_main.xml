@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.ahmed.mychatapp.MainActivity">
-    
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="56dp">
+
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -20,21 +21,32 @@
             android:elevation="6dp"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:tabGravity="fill"/>
     </android.support.design.widget.AppBarLayout>
 
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <fragment
+        android:id="@+id/add_friend_fragment"
+        class="com.example.ahmed.mychatapp.AddFriendFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/friends_list"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+        android:layout_margin="16dp"/>
+
+    <fragment
+
+        android:id="@+id/friends_list_fragment"
+        class="com.example.ahmed.mychatapp.FriendsListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>

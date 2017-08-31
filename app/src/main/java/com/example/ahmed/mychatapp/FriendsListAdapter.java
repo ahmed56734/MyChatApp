@@ -1,6 +1,7 @@
 package com.example.ahmed.mychatapp;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,6 +70,7 @@ public class FriendsListAdapter extends RecyclerView.Adapter {
         @BindView(R.id.tv_display_name)
         TextView friendNameTextView;
 
+
         public FriendItemViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -81,12 +83,16 @@ public class FriendsListAdapter extends RecyclerView.Adapter {
         }
 
          void setFriendIconImageView(String imageUrl){
-             if(imageUrl != null)
-                 Picasso.with(itemView.getContext()).load(imageUrl).resize(50,50).centerInside().into(friendIconImageView);
+             if(imageUrl != null) {
+                 Picasso.with(itemView.getContext()).load(imageUrl).resize(50, 50).centerInside().into(friendIconImageView);
+             }
+
         }
 
          void setFriendNameTextView(String name){
             friendNameTextView.setText(name);
         }
     }
+
+
 }

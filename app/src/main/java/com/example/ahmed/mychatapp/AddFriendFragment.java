@@ -89,7 +89,7 @@ public class AddFriendFragment extends Fragment {
                     @Override
                     public void onResult(boolean isExistingUser, final String friendUid) {
                         if(isExistingUser){
-                            Toast.makeText(getContext(), "user is " + friendUid, Toast.LENGTH_SHORT).show();
+
 
                             checkIfFriends(mCurrentFirebaseUser.getUid(), friendUid, new Utils.AreFriendsCallbacks() {
                                 @Override
@@ -98,7 +98,7 @@ public class AddFriendFragment extends Fragment {
                                         Toast.makeText(getContext(), "you are already friends", Toast.LENGTH_SHORT).show();
                                     }
                                     else{
-                                        Toast.makeText(getContext(), "not friends", Toast.LENGTH_SHORT).show();
+
                                         addNewFriend(mCurrentFirebaseUser.getUid(), friendUid, getContext());
                                         mFriendEmailEditText.setText("");
                                     }

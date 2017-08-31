@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.ahmed.mychatapp.widget.UpdateWidgetService;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -74,7 +75,6 @@ public class LoginActivity extends AppCompatActivity {
                             addNewUser(user);
 
                         } else {
-                            Toast.makeText(getApplicationContext(), "he isn't new user", Toast.LENGTH_SHORT).show();
                             Utils.setActive(user.getUid(), true);
                         }
                     }
@@ -83,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
                 //start main activity
+                UpdateWidgetService.startActionUpdateFriendsWidget(getApplicationContext());
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
 
@@ -93,7 +94,6 @@ public class LoginActivity extends AppCompatActivity {
                                 .setIsSmartLockEnabled(false)
                                 .setProviders(
                                         AuthUI.GOOGLE_PROVIDER,
-                                        AuthUI.FACEBOOK_PROVIDER,
                                         AuthUI.EMAIL_PROVIDER)
                                 .setLogo(R.drawable.logo)
                                 .build(),
@@ -119,6 +119,19 @@ public class LoginActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "new user added to database", Toast.LENGTH_SHORT).show();
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_SIGN_IN) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, "Signed in!", Toast.LENGTH_SHORT).show();
+            } else if (resultCode == RESULT_CANCELED) {
+                finish();
+            }
+        }
     }
 
 
