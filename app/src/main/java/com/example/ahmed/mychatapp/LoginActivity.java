@@ -93,8 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                                 .createSignInIntentBuilder()
                                 .setIsSmartLockEnabled(false)
                                 .setProviders(
-                                        AuthUI.GOOGLE_PROVIDER,
-                                        AuthUI.EMAIL_PROVIDER)
+                                        AuthUI.GOOGLE_PROVIDER)
                                 .setLogo(R.drawable.logo)
                                 .build(),
                         RC_SIGN_IN);
