@@ -1,8 +1,5 @@
 package com.example.ahmed.mychatapp;
 
-import com.google.firebase.database.ServerValue;
-
-
 /**
  * Created by ahmed on 8/23/17.
  */

@@ -30,16 +30,16 @@
         class="com.example.ahmed.mychatapp.AddFriendFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:text="@string/friends_list"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
-        android:layout_margin="16dp"/>
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
 
     <fragment
 

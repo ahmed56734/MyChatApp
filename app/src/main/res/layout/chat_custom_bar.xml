@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
 
     <TextView
         android:id="@+id/tv_friend_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="TextView"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title.Inverse"
-        android:padding="4dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"/>
+        android:padding="4dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title.Inverse"
+        tools:text="TextView" />
 
     <ImageButton
         android:id="@+id/favorite_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:src="@android:drawable/btn_star_big_off"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/select_as_favorite_friend"
         android:padding="4dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        />
+        tools:src="@android:drawable/btn_star_big_off" />
 </RelativeLayout>

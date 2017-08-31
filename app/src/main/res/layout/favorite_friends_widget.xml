@@ -5,16 +5,16 @@
 
 
     <ListView
+        android:id="@+id/lv_friends_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lv_friends_list"/>
+        android:layout_height="match_parent" />
 
 
     <TextView
+        android:id="@+id/empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/you_have_no_favorite_friends"
         android:gravity="center"
-        android:id="@+id/empty_view" />
+        android:text="@string/you_have_no_favorite_friends" />
 
 </FrameLayout>

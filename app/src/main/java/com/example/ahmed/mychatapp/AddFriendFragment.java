@@ -12,11 +12,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import com.google.firebase.auth.FirebaseUser;
 
 import static com.example.ahmed.mychatapp.Utils.addNewFriend;
 import static com.example.ahmed.mychatapp.Utils.checkIfExistingUserByEmail;

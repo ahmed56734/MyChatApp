@@ -32,10 +32,9 @@
                     android:layout_height="?actionBarSize"
                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                     app:contentInsetStart="72dp"
-                    app:layout_collapseMode="pin"
-                    >
+                    app:layout_collapseMode="pin">
 
-                    </android.support.v7.widget.Toolbar>
+                </android.support.v7.widget.Toolbar>
 
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>

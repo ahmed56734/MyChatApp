@@ -179,7 +179,4 @@ public class Utils {
         void onResult(boolean areFriends);
     }
 
-    interface GetFriendsListCallbacks {
-        void onResult(List<User> friends);
-    }
 }

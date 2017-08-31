@@ -9,7 +9,7 @@
     </style>
 
 
-    <style name="friend_message_style" >
+    <style name="friend_message_style">
         <item name="android:backgroundTint">@color/com_facebook_messenger_blue</item>
     </style>
 

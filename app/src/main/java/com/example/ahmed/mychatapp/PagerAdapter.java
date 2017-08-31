@@ -3,9 +3,6 @@ package com.example.ahmed.mychatapp;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-
-import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * Created by ahmed on 8/24/17.
