@@ -19,4 +19,7 @@
     <string name="friend_added">friend added</string>
     <string name="error_happened_adding_you_friend">error happened adding your friend</string>
     <string name="signed_in">Signed in!</string>
+    <string name="add">add</string>
+    <string name="sign_out">Sign out</string>
+    <string name="you_are_not_signed_in">you are not signed in</string>
 </resources>
