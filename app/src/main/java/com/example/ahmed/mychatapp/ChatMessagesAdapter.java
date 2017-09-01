@@ -41,7 +41,7 @@ public class ChatMessagesAdapter extends FirebaseRecyclerAdapter<Message, ChatMe
         viewHolder.setFriendIconImageView(mFriendUid, mFriendImageUrl);
     }
 
-    static class MessageViewHolder extends RecyclerView.ViewHolder {
+    public static class MessageViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.iv_friend_icon)
         ImageView friendIconImageView;
         @BindView(R.id.messageTextView)

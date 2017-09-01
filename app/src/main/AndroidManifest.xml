@@ -19,7 +19,6 @@
                 android:value=".MainActivity" />
 
         </activity>
-        <activity android:name=".OnlineUsers" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
