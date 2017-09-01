@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Toast.makeText(getApplicationContext(), "new user added to database", Toast.LENGTH_SHORT).show();
+
 
     }
 
@@ -127,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (requestCode == RC_SIGN_IN) {
             if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "Signed in!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.signed_in), Toast.LENGTH_SHORT).show();
             } else if (resultCode == RESULT_CANCELED) {
                 finish();
             }

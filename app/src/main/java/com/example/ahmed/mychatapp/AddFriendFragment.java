@@ -1,6 +1,7 @@
 package com.example.ahmed.mychatapp;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
@@ -33,6 +34,7 @@ public class AddFriendFragment extends Fragment {
     TextInputEditText mFriendEmailEditText;
     @BindView(R.id.btn_add_friend)
     Button mAddFriendButton;
+    private Context context;
 
 
 
@@ -56,6 +58,7 @@ public class AddFriendFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
+        context = getContext();
 
     }
 
@@ -73,15 +76,12 @@ public class AddFriendFragment extends Fragment {
             String email = mFriendEmailEditText.getText().toString().trim();
 
             if(email.isEmpty())
-                Toast.makeText(getContext(), "email field is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getString(R.string.email_field_is_empty), Toast.LENGTH_SHORT).show();
 
             else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())
-                Toast.makeText(getContext(), "insert valid email", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getString(R.string.insert_valid_email), Toast.LENGTH_SHORT).show();
 
 
-//            else if(.equals(email)){
-//                Toast.makeText(getContext(), "you can't add yourself to friends", Toast.LENGTH_SHORT).show();
-//            }
 
             else{
                 checkIfExistingUserByEmail(email, new Utils.IsExistingUserByEmailCallback() {
@@ -94,7 +94,7 @@ public class AddFriendFragment extends Fragment {
                                 @Override
                                 public void onResult(boolean areFriends) {
                                     if(areFriends){
-                                        Toast.makeText(getContext(), "you are already friends", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, context.getString(R.string.you_are_already_friends), Toast.LENGTH_SHORT).show();
                                     }
                                     else{
 
@@ -106,7 +106,7 @@ public class AddFriendFragment extends Fragment {
                         }
 
                         else {
-                            Toast.makeText(getContext(), "the email owner isn't an app user yet", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, context.getString(R.string.the_email_owner_isnt_an_app_user_yet), Toast.LENGTH_SHORT).show();
                         }
                     }
                 }, getContext());

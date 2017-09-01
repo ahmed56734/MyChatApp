@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="button for sending message"
+            android:contentDescription="@string/button_for_sending_message"
             android:elevation="8dp"
             android:src="@drawable/ic_send_black_36dp"
             android:translationZ="8dp" />

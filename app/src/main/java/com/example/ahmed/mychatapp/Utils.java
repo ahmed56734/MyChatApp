@@ -111,12 +111,12 @@ public class Utils {
                     friendDatabaseReference.setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(context, "friend added", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, context.getString(R.string.friend_added), Toast.LENGTH_SHORT).show();
                             UpdateWidgetService.startActionUpdateFriendsWidget(context);
                         }
                     });
                 } else
-                    Toast.makeText(context, "error happened adding your friend", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, context.getString(R.string.error_happened_adding_you_friend), Toast.LENGTH_SHORT).show();
 
             }
         });

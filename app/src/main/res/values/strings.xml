@@ -11,4 +11,12 @@
     <string name="you_have_no_favorite_friends">you have no favorite friends</string>
     <string name="friends_list">Friends List :</string>
     <string name="you_have_no_friends_yet">you have no friends yet</string>
+    <string name="button_for_sending_message">button for sending message</string>
+    <string name="email_field_is_empty">email field is empty</string>
+    <string name="insert_valid_email">insert valid email</string>
+    <string name="you_are_already_friends">you are already friends</string>
+    <string name="the_email_owner_isnt_an_app_user_yet">the email owner isn\'t an app user yet</string>
+    <string name="friend_added">friend added</string>
+    <string name="error_happened_adding_you_friend">error happened adding your friend</string>
+    <string name="signed_in">Signed in!</string>
 </resources>
