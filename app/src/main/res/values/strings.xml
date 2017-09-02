@@ -22,4 +22,5 @@
     <string name="add">add</string>
     <string name="sign_out">Sign out</string>
     <string name="you_are_not_signed_in">you are not signed in</string>
+    <string name="error_happened_sending_your_message">error happened sending your message</string>
 </resources>

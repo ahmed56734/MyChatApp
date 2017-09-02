@@ -153,8 +153,7 @@ public class ChatActivity extends AppCompatActivity {
                     if (task.isSuccessful())
                         mMessageEditText.setText("");
                     else {
-                        Toast.makeText(getApplicationContext(), "error happened sending your message", Toast.LENGTH_SHORT).show();
-                        Log.e(LOG_TAG, "error sending message", task.getException());
+                        Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.error_happened_sending_your_message), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

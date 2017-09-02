@@ -37,6 +37,8 @@ public class ChatMessagesAdapter extends FirebaseRecyclerAdapter<Message, ChatMe
 
     @Override
     protected void populateViewHolder(MessageViewHolder viewHolder, Message model, int position) {
+
+
         viewHolder.setMessageText(model, mFriendUid);
         viewHolder.setFriendIconImageView(mFriendUid, mFriendImageUrl);
     }
